@@ -29,8 +29,8 @@ var burger = {
 // })
 
 //--MODIFY--
- burger.modify('devoured','1','id=6', function(data){
-	console.log(data);
-});
+//  burger.modify('devoured','1','id=6', function(data){
+// 	console.log(data);
+// });
 
 module.exports = burger;

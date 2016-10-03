@@ -10,16 +10,21 @@ router.get('/', function (req, res) {
 router.get('/burgers', function (req, res) {
 	burgers.showAll(function(data){
 		var  burgersObject = {burgers:data};
-		//This one you worry about later once you start using handlebars
 		res.render('index',burgersObject);
 	})
 });
 
-// router.post('/burgers/create', function (req, res) {
-// 	burgers.create('burger_name',req.name,function () {
-// 		res.redirect('/burgers');
-// 	});
-// });
+
+
+
+//FOCUS ON THIS TOMO
+// THE CREATE STRING PART WONT ACCEPT CERTAIN CHARACTERS PLS ASK TA
+router.post('/burgers/create', function (req, res) {
+	console.log(req.body.name);
+	burgers.create('burger_name',req.body.name,function () {
+		res.redirect('/burgers');
+	});
+});
 
 
 

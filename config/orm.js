@@ -11,7 +11,7 @@ var orm =
 	 create: function(table,column,values, cb){
 	 	var columnString = column.toString();
 	 	var valuesString = "'"+values +"'";
-	 	var queryString = 'INSERT INTO' + ' ' +table +'('+ columnString +')'+ 'VALUES('+ valuesString+');'
+	 	var queryString = 'INSERT INTO' + ' ' +table +' ('+ columnString +') '+ 'VALUES(' + valuesString + ');'
 	 	console.log(queryString);
 		connection.query(queryString, function(err,result){
 			if(err) throw err;
@@ -38,4 +38,5 @@ var orm =
 
 
 module.exports = orm;
+
 
