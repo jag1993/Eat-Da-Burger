@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var burgers = require('../models/burger.js');
+var querystring = require('querystring');
 
 
 router.get('/', function (req, res) {
@@ -20,8 +21,10 @@ router.get('/burgers', function (req, res) {
 //FOCUS ON THIS TOMO
 // THE CREATE STRING PART WONT ACCEPT CERTAIN CHARACTERS PLS ASK TA
 router.post('/burgers/create', function (req, res) {
-	console.log(req.body.name);
-	burgers.create('burger_name',req.body.name,function () {
+	var condition = req.body.name;
+	var conditionFixed = condition.replace("'", " ");
+	console.log(conditionFixed);
+	burgers.create('burger_name',conditionFixed,function () {
 		res.redirect('/burgers');
 	});
 });
