@@ -20,7 +20,7 @@ router.get('/burgers', function (req, res) {
 
 router.post('/burgers/create', function (req, res) {
 	var condition = req.body.name;
-	var conditionFixed = querystring.stringify(condition);
+	var conditionFixed = condition.replace(/0|'|"|%|_/g, " ");
 	console.log(conditionFixed);
 	burgers.create('burger_name',conditionFixed,function () {
 		res.redirect('/burgers');
