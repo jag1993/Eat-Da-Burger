@@ -23,14 +23,5 @@ var burger = {
 
 
 
-// --CREATE--
-// burger.create('burger_name','Chicken Sandwich', function(data){
-// 	console.log(data);
-// })
-
-//--MODIFY--
-//  burger.modify('devoured','1','id=6', function(data){
-// 	console.log(data);
-// });
 
 module.exports = burger;

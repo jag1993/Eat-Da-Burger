@@ -1,6 +1,7 @@
 <h1>EAT DA BURGER!</h1>
-
-<h2>Burgers That Are Not Devoured!</h2>
+<div class="row">
+  <div class="panel col-lg-5 not-devoured">
+    <h6>Burgers That Are Not Devoured!</h6>
 
 <ul>
   {{#each burgers}}
@@ -16,8 +17,9 @@
     {{/unless}}
   {{/each}}
 </ul>
-
-<h2>Burgers That Are Devoured!</h2>
+</div>
+  <div class="panel col-lg-5 devoured">
+<h6>Burgers That Are Devoured!</h6>
 
 <ul>
   {{#each burgers}}
@@ -32,12 +34,14 @@
         </form>
 
 
-
       </li>
     {{/if}}
   {{/each}}
 </ul>
+</div>
 
+
+</div>
 
 
 <h2>Add a Burger</h2>
